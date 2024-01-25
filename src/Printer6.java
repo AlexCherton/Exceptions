@@ -1,17 +1,26 @@
 import java.util.Arrays;
 
 class Expr {
-    public static String expr(int[] intArray, int d) {
+    public static Double expr(int a, int b) {
 
-        Float res = 0f;
+        Double res = 0d;
 
         String s;
 
-        res = (float) intArray[8] / d;
+        res = (double) a / b;
 
-        s = "intArray[8] / d = " + intArray[8] + " / " + d + " = " + res;
+        return res;
+    }
 
-        return s;
+    public static void printSum(int a, int b) {
+
+        int res = 0;
+
+        String s;
+
+        res = a + b;
+
+        System.out.println(res);
     }
 }
 public class Printer6 {
@@ -19,20 +28,17 @@ public class Printer6 {
         int a;
         int b;
         if (args.length==0) {
-            a = 99;
-            b = 3;
+            a = 12;
+            b = 5;
         }else {
             a = Integer.parseInt(args[0]);
             b = Integer.parseInt(args[1]);
         }
 
-        if (d==0){
+        if (b==0){
             System.out.println("It's not possible to evaluate the expression - intArray[8] / d as d = 0");
-        }else if (intArray.length<9){
-            System.out.println("It's not possible to evaluate the expression - intArray[8] / d as there is"+
-                    "no 8th element in the given array");
         }else {
-            String res = Expr.expr(intArray, d);
+            Double res = Expr.expr(a, b);
             System.out.println(res);
         }
     }
